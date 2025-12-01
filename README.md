@@ -19,13 +19,22 @@ o
 ## Estructura del Proyecto
 
 product.py          # Producto base (abstracto)
+
 flight.py           # Vuelos
+
 accommodation.py    # Alojamiento base (abstracto)
+
 hotel.py            # Hotel
+
 house.py            # Casa/Departamento
+
 complex.py          # Complejo de casas
+
 package.py          # Paquete turístico
+
 user.py             # Usuarios y compras
+
+
 
 main.py
 
