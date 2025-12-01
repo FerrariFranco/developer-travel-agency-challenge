@@ -49,8 +49,5 @@ class House(Accommodation):
             return 50000
     
     def __str__(self):
-        """
-        Representación en string de la casa.
-        """
         room_type = "Monoambiente" if self.rooms == 1 else f"Casa de {self.rooms} ambientes"
         return f"{room_type} en {self.address}"

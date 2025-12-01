@@ -33,7 +33,4 @@ class Hotel(Accommodation):
         return self.stars * PRICE_PER_HOTEL_STAR * nights
     
     def __str__(self):
-        """
-        Representación en string del hotel.
-        """
         return f"Hotel {self.name} ({self.stars}★) en {self.address}"
