@@ -18,17 +18,17 @@ o
 
 ## Estructura del Proyecto
 
-models/
-├── product.py          # Producto base (abstracto)
-├── flight.py           # Vuelos
-├── accommodation.py    # Alojamiento base (abstracto)
-├── hotel.py            # Hotel
-├── house.py            # Casa/Departamento
-├── complex.py          # Complejo de casas
-├── package.py          # Paquete turístico
-└── user.py             # Usuarios y compras
+product.py          # Producto base (abstracto)
+flight.py           # Vuelos
+accommodation.py    # Alojamiento base (abstracto)
+hotel.py            # Hotel
+house.py            # Casa/Departamento
+complex.py          # Complejo de casas
+package.py          # Paquete turístico
+user.py             # Usuarios y compras
 
-main.py                 # Ejemplos de uso
+main.py
+
 
 ---
 
