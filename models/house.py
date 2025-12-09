@@ -1,3 +1,4 @@
+from constants import PRICE_HOUSE_ONE_ROOM, PRICE_HOUSE_TWO_TO_FOUR_ROOMS, PRICE_HOUSE_MORE_THAN_FOUR_ROOMS
 from models.accommodation import Accommodation
 
 
@@ -42,15 +43,12 @@ class House(Accommodation):
             int: Precio por noche
         """
         if self.rooms == 1:
-            return 15000 
+            return PRICE_HOUSE_ONE_ROOM 
         elif 2 <= self.rooms <= 4:
-            return 30000 
+            return PRICE_HOUSE_TWO_TO_FOUR_ROOMS 
         else: 
-            return 50000
+            return PRICE_HOUSE_MORE_THAN_FOUR_ROOMS
     
     def __str__(self):
-        """
-        Representación en string de la casa.
-        """
         room_type = "Monoambiente" if self.rooms == 1 else f"Casa de {self.rooms} ambientes"
         return f"{room_type} en {self.address}"

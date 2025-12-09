@@ -16,7 +16,7 @@ class User:
         """
         self.name = name
         self.budget = budget
-        self.initial_budget = budget  # Para tracking
+        self.initial_budget = budget  
         self.purchase_history = []
     
     def purchase_product(self, product, **kwargs):
@@ -30,24 +30,19 @@ class User:
         Returns:
             bool: True si la compra fue exitosa, False si no hay fondos suficientes
         """
-        # Validar que sea un Product
         if not isinstance(product, Product):
             print(f"✗ Error: {type(product).__name__} no es un producto válido")
             return False
         
-        # Calcular precio según el tipo de producto
         try:
-            # Si el producto necesita parámetros (como nights para alojamientos)
             if kwargs:
                 price = product.calculate_price(**kwargs)
             else:
                 price = product.calculate_price()
         except TypeError:
-            # Si faltaron parámetros necesarios
             print(f"✗ Error: El producto requiere parámetros adicionales (ej: nights)")
             return False
         
-        # Verificar si hay fondos suficientes
         if price <= self.budget:
             self.budget -= price
             self.purchase_history.append({
@@ -104,7 +99,7 @@ class User:
         except:
             return False
         
-    def calculate_max_nights(self, accommodation):
+    def _calculate_max_nights(self, accommodation):
         """Calcula el máximo de noches que puede pagar"""
         from models.complex import Complex
         
@@ -131,7 +126,7 @@ class User:
         
         for product in products:
             if isinstance(product, Accommodation):
-                max_nights = self.calculate_max_nights(product)
+                max_nights = self._calculate_max_nights(product)
                 
                 if max_nights > 0:
                     if isinstance(product, Complex):
