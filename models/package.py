@@ -82,27 +82,6 @@ class Package(Product):
         
         return total
     
-    def get_products_count(self):
-        """
-        Retorna la cantidad de productos en el paquete.
-        
-        Returns:
-            int: Cantidad de productos
-        """
-        return len(self.products)
-    
-    def get_products_by_type(self, product_type):
-        """
-        Filtra productos por tipo.
-        
-        Args:
-            product_type (type): Tipo de producto a filtrar
-            
-        Returns:
-            list: Lista de productos del tipo especificado
-        """
-        return [p for p in self.products if isinstance(p, product_type)]
-    
     def __str__(self):
         products_summary = f"{len(self.products)} producto(s)"
         if self.description:
